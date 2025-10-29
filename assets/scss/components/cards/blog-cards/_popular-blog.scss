@@ -1,0 +1,25 @@
+@use "../../../utils/" as *;
+.popular-blog {
+  i {
+    color: $clr_primary_main;
+    fill: currentColor;
+  }
+  .popular-post {
+    @include d_flex(row, start, start, nowrap, false, 0);
+    background-color: $clr_bg_paper;
+    padding: $s_3;
+    margin-bottom: $s_3;
+    span.number {
+      @include fs("title-s");
+      color: $clr_natural_4;
+      height: 100%;
+      width: 25%;
+    }
+    .blog-posts {
+      max-width: 70%;
+      .paragraph {
+        @include fs("body-s");
+      }
+    }
+  }
+}

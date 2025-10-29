@@ -1,0 +1,36 @@
+@use "../../../utils/" as *;
+.recent-posts {
+  .blogs {
+    .blog-posts {
+      @include d_flex(row, start, center, nowrap, false, $s_3);
+      margin-bottom: $s_8;
+      background-color: $clr_bg_paper;
+      padding: $s_3;
+    }
+    .post-main {
+      width: 70%;
+    }
+    img {
+      height: 15vh;
+      width: 43%;
+      aspect-ratio: auto 120 / 95;
+    }
+    .postmeta {
+      display: block;
+      @include fs("caption");
+      color: $clr_secondary_light;
+      div,
+      span {
+        @include d_flex(row, start, center, nowrap, false, $s_2);
+        i::before {
+          color: black;
+          @include fs("h4");
+        }
+      }
+    }
+    .post-detail {
+      @include d_flex(column, start, start, nowrap, false, $s_3);
+      width: 70%;
+    }
+  }
+}
