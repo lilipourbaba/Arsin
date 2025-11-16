@@ -1,0 +1,11 @@
+@use '../../utils/' as *;
+
+.cat-propertty{
+    width: 50%;
+}
+ .rug-archive{
+ 
+ @include d_flex(column, center, start, nowrap, true, $s_6);   
+    margin-bottom: 20px;
+
+ } 

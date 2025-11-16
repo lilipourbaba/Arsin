@@ -1,0 +1,61 @@
+@use "../utils/" as *;
+
+.site-footer {
+  position: relative;
+  padding: $s_6 $s_10;
+  .footer-wrapper {
+    padding: $s_10 $s_5;
+     @include d_flex(row,  space-between, flex-start, wrap, false, $s_6);
+    border-top: 1px solid $divider;
+
+    .footer-col {
+      @include d_flex(column, flex-start, stretch, nowrap, false, $s_1);
+      ul{
+             @include d_flex(row, stretch, flex-start, wrap, false, $s_3);
+        @include fs("metadata2");
+
+      }
+    
+      &:not(:nth-child(5)) {
+        // white-space: nowrap;
+      }
+
+      .footer-title {
+        color: $gold_1;
+        @include fs("h5");
+      }
+    }
+    @include mq("md") {
+      .col-newsletter {
+        order: -1;
+        min-width: 100%;
+      }
+      .col-support {
+        order: 3;
+      }
+      .col-contact {
+        order: 4;
+      }
+    }
+  }
+  .footer-rights {
+text-align: center;
+     @include fs("metadata3");
+  }
+  @media (max-width: 1440px) {
+    padding-inline: $s_10;
+  }
+  @include mq("md") {
+    padding: $s_5;
+  }
+}
+#success {
+  color: $clr_primary_main;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  // white-space: nowrap;
+}
+.custom-logo-link img{
+  width: 32px;
+  height: 32px;
+}

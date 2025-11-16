@@ -1,0 +1,90 @@
+@use "../utils/" as *;
+
+ .homepage {
+  min-height: 55vh;
+  @include d_flex(column, start, center, nowrap, false, $s_14);
+  h2 {
+    @include fs("h1");
+  }
+  .rug-panels {
+    @include d_flex(column, center, center, nowrap, false, $s_12);
+ 
+    .btn-Book {
+      @include d_flex(row, center, center, nowrap, false, $s_5);
+      @include fs("h2");
+
+      @include button(
+        $burgundy_1,
+        1.5rem 3rem,
+        polygon(
+          8px 0px,
+          calc(100% - 8px) 0px,
+          100% 8px,
+          100% calc(100% - 8px),
+          calc(100% - 8px) 100%,
+          8px 100%,
+          0px calc(100% - 8px),
+          0px 8px
+        ),
+        $ink,
+        $burgundy_2
+      );
+      div {
+        @include fs("h4");
+
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        background: $Obsidian_2;
+        width: 32px;
+        @include d_flex(row, center, center);
+        height: 32px;
+        transition: $t_1;
+      }
+      &:hover div {
+        background-color: $burgundy_2;
+      }
+    }
+    .demos{
+            @include d_flex(row, center, center, nowrap, true , $s_5);
+
+    }
+    .shopper-panel {
+      @include button($burgundy_1, 1rem 2rem, unset, $ink, $burgundy_2);
+          white-space: nowrap;
+    }
+    .vendor-portal {
+          white-space: nowrap;
+      @include button(
+        transparent,
+        1rem 2rem,
+        unset,
+        $ink,
+        $Obsidian_1,
+        0,
+        #473a1a
+      );
+      &:hover {
+        box-shadow: 0 0 0 2px #c8a24a8c;
+      }
+    }
+    .designer-studio {
+          white-space: nowrap;
+      @include button(
+        transparent,
+        1rem 2rem,
+        unset,
+        $ink,
+        $Obsidian_1,
+        0,
+        $ring
+      );
+      &:hover {
+        box-shadow: 0 0 0 2px #c8a24a8c;
+      }
+    }
+    a {
+      line-height: 80px !important;
+      padding: 0 100px;
+      @include fs("h3");
+    }
+  }
+}

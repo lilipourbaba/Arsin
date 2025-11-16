@@ -1,0 +1,35 @@
+@use "../../utils/" as *;
+.header-search {
+  width: 100%;
+  margin: 8px 0;
+  z-index: 5555;
+  position: relative;
+
+  form {
+    @include d_flex(row, start, stretch, nowrap, false, $s_4);
+    padding: $s_1;
+    color: $burgundy_1;
+    background-color: $background;
+    z-index: 555;
+    border: $b_3;
+    backdrop-filter: blur(20px);
+
+    button {
+      padding: $s_2;
+      border: 0;
+      cursor: pointer;
+      color: $burgundy_1;
+    }
+    input {
+      width: 100%;
+      height: auto;
+      color: $burgundy_1;
+      &::placeholder {
+        color: $burgundy_1;
+      }
+    }
+  }
+  @include mq("md") {
+    display: none;
+  }
+}

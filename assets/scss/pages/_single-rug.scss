@@ -1,0 +1,211 @@
+@use "../utils/" as *;
+
+.single-rug {
+  max-width: 100%;
+  .details {
+    @include d_flex(row, center, start, nowrap, false, $s_4);
+    padding: 5% 0;
+    .rug-name {
+      width: 48%;
+      @include d_flex(column, start, start, nowrap, false, $s_4);
+      .property {
+        @include d_flex(row, space-between, start, nowrap, false, $s_4);
+
+        width: 100%;
+        span {
+          @include fs("title");
+        }
+        .property-field {
+          &.Condition {
+            grid-column: span 2;
+          }
+
+          h5 {
+            @include fs("h5");
+            color: $muted;
+          }
+        }
+      }
+      .property-titr {
+        @include fs("h6-b");
+
+        color: $burgundy_1;
+      }
+    }
+
+    .rug_detail {
+      width: 52%;
+      @include d_flex(column, start, start, nowrap, false, $s_4);
+
+      h2 {
+        width: 100%;
+        border-bottom: 1px solid $divider;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .purpose textarea {
+        background-color: $Obsidian_1;
+        color: $ink;
+        padding: 1rem;
+        width: 100%;
+      }
+      .Specifications {
+        ul {
+          li {
+            @include d_flex(row, space-between, start, nowrap, true, $s_4);
+          }
+        }
+      }
+    }
+  }
+  .palets {
+    @include d_flex(row, start, start, nowrap, false, $s_6);
+    .palet {
+      @include d_flex(column, center, center, nowrap, false);
+      height: 140px;
+      width: 100px;
+      padding: 7px;
+      div {
+        height: 100%;
+        background: #ffff;
+        border-radius: 0.7px;
+        padding: $s_2;
+        .squre {
+          width: 74px;
+          height: 74px;
+          @include d_flex(column, center, center);
+          p {
+            @include fs("body");
+          }
+        }
+        p {
+          white-space: nowrap;
+          @include fs("metadata2");
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+#showroom {
+  @include button($burgundy_1, 20px 40px);
+}
+#Purchase {
+  @include button($Obsidian_1, 20px 40px);
+}
+.swiper-area {
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 100%;
+  margin-top: -68px;
+  position: relative;
+  .mySwiper1 {
+    width: 620px;
+    height: 126px;
+    position: absolute;
+    bottom: 24px;
+    left: 7%;
+
+    .swiper-slide {
+      width: 126px !important;
+      height: 126px;
+      object-fit: cover;
+      border: 8px solid $background;
+
+      img {
+        width: 100%;
+        height: 100%;
+        transform: scale(1.1);
+        filter: brightness(0.8);
+        z-index: -1;
+      }
+    }
+  }
+
+  .mySwiper2 {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      max-height: 1000px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: 45%;
+      width: 64px;
+      height: 64px;
+      background-color: $burgundy_1;
+      border-radius: 5px;
+      transform: rotate(45deg);
+      &::after {
+        color: $ink;
+        font-size: 34px;
+        transform: rotate(312deg);
+      }
+      &.swiper-button-disabled {
+        background-color: $Obsidian_1;
+        opacity: 0.8;
+      }
+    }
+    .swiper-button-next {
+      right: 4%;
+    }
+    .swiper-button-prev {
+      left: 4%;
+    }
+  }
+  .rug-share {
+    position: absolute;
+    bottom: 24px;
+    right: 9%;
+    @include d_flex(row, center, center, nowrap, false, $s_3);
+    z-index: 1;
+    color: #ffff;
+    button {
+      @include button($burgundy_1, 16px);
+      &.caalog {
+        @include button($white, 16px, $Obsidian_1);
+        white-space: nowrap;
+        @include fs("h6-b");
+      }
+      &.ARView {
+        @include button($Obsidian_1, 16px, $white);
+        white-space: nowrap;
+        @include fs("h6-b");
+      }
+    }
+    .iconsax::before {
+      font-size: 32px;
+    }
+  }
+}
+
+.deail-cont {
+  opacity: 0;
+  height: 0;
+  transition: $t_1;
+
+  &.active {
+    opacity: 1;
+    height: auto;
+  }
+}
+
+.rug-related {
+  .card-component {
+    width: 33%;
+    .cart-img img {
+      width: 100%;
+      height: 680px;
+    }
+    .card-collection-detail {
+      background: $Obsidian_1;
+      color: $white;
+      padding: 5px;
+    }
+  }
+}
